@@ -10,3 +10,5 @@ A branch is basically another copy of the repository you are working on. You can
 A commit saves changes made to code in a particular branch, and this allows you to create new versions of a branch which you can revert back to. A good commit message clearly describes what changes were made in the version being committed.
 * What is a merge conflict?
 A merge conflict occurs when two branches that are being merged contain changes to the same line of code. When this happens Git does not know which code is correct and lets you know that there is a conflict.
+
+Hi Glenna!!!
