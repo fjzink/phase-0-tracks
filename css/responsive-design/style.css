@@ -30,3 +30,44 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+body {
+  max-width: 960px;
+}
+
+main {
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 100px;
+}
+
+#external-links {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 100px;
+}
+
+/*@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}*/
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: .75em
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #external-links {
+    display: block;
+    width: 100%;
+  }
+  main {
+    display: block;
+    width: 100%;
+  }
+}
