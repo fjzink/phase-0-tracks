@@ -14,7 +14,7 @@ def encrypt(password)
 			end
 		end
 	end
-	p password
+	return password
 end
 
 encrypt("password password")
@@ -33,10 +33,13 @@ def decrypt(pass)
 			pass[i] = "abcdefghijklmnopqrstuvwxyz"[ind-1]
 		end
 	end
-	p pass
+	return pass
 end
 
-encrypt("abc")
-encrypt("zed")
-decrypt("bcd")
-decrypt("afe")
+p encrypt("abc")
+p encrypt("zed")
+p decrypt("bcd")
+p decrypt("afe")
+p decrypt(encrypt("swordfish"))
+#The nested method call works because the encrypt method returns a string which is then used
+#as the argument for the decrypt method.
