@@ -11,6 +11,17 @@ puts "Our company cafeteria serves garlic bread. Should we order you some?(y/n)"
 garlic = gets.chomp
 puts "Would you like to enroll in the company\'s health insurance?(y/n)"
 insurance = gets.chomp
-is_vampire = "Results inconclusive."
 age_right = age == calc_age
 like_garlic = garlic == "y"
+want_insurance = insurance == "y"
+if name == "Drake Cula" || name == "Tu Fang"
+	p "Definitely a vampire."
+elsif !age_right && !like_garlic && !want_insurance
+	p "Almost certainly a vampire."
+elsif !age_right && (!like_garlic || !want_insurance)
+	p "Probably a vampire."
+elsif age_right && (like_garlic || want_insurance)
+	p "Probably not a vampire."
+else 
+	p "Results inconclusive."
+end
