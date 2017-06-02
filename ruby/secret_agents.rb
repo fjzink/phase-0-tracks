@@ -36,10 +36,20 @@ def decrypt(pass)
 	return pass
 end
 
-p encrypt("abc")
-p encrypt("zed")
-p decrypt("bcd")
-p decrypt("afe")
-p decrypt(encrypt("swordfish"))
+#p encrypt("abc")
+#p encrypt("zed")
+#p decrypt("bcd")
+#p decrypt("afe")
+#p decrypt(encrypt("swordfish"))
 #The nested method call works because the encrypt method returns a string which is then used
 #as the argument for the decrypt method.
+
+puts "Would you like to encrypt or decrypt a password?"
+answer = gets.chomp
+puts "What is your password?"
+user_pass = gets.chomp
+if answer == "encrypt"
+	p encrypt(user_pass)
+else
+	p decrypt(user_pass)
+end
