@@ -1,0 +1,13 @@
+#Release 0 - Elevator Algorithm
+1. Start at bottom left button
+2. Is the button the floor you want to go to? If yes press it and stop, if not move one button to the right.
+3. When you reach the end of the row of buttons, move to the far left button on the next row up.
+4. Repeat step 2.
+
+#Release 1 - Real Life Algorithm
+Cooking scrambled eggs:
+1. Turn on heat.
+2. Crack each egg into the pan.
+3. Whisk eggs.
+4. Let eggs cook for 1 minute and then stir them.
+5. After stirring, check if they are done. If done turn the heat off, if not done repeat step 4.
