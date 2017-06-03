@@ -1,3 +1,36 @@
-body {
-	background-color: antiquewhite;
+header {
+  background-color: blue;
+  padding: 10px;
+  border: 2px solid black;
+  font-size: 1.5em;
+  background-image: url(https://static.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg);
+}
+
+.column-1{
+  background-color: red;
+ 
+}
+
+h1, h2 {
+  font-family: Helvetica;
+}
+
+.column-2 {
+  background-color: magenta;
+}
+
+footer {
+  background-color: yellow;
+  border: 2px solid black;
+}
+
+.column-1, .column-2 {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  padding: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: 2px solid black;
+  font-size: 1em;
 }
