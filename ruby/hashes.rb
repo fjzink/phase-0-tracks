@@ -1,3 +1,44 @@
+#Release 0
+
+=begin
+array = [1, 2, 3, "a", "b", "c"]
+p array[3]
+p array[50]
+p array.length
+p array.push("d")
+p array.drop(2)
+=end
+
+#Release 1
+
+=begin
+form = {
+	name: "Bob",
+	address: "5 Awesome Street",
+	email: "bob@totallyradical.net",
+	phone: 1234567899,
+	blue: "cerulean",
+	walpaper: "paisley",
+	ombre: "fierce"
+}
+
+p form
+
+form[:name] = "Bobby"
+form[:email] = "bobby@totallyradical.net"
+form[:hired] = true
+
+p form
+
+shade_blue = :blue
+p form[shade_blue]
+
+p form[:name] + form[:address]
+p form
+=end
+
+#Release 2
+
 #Ask the user to input information.
 #Store each input as a key/value pair in a hash.
 #Print the hash so that the user can verify that the information is correct.
