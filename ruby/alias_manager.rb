@@ -39,3 +39,16 @@ def alias_manager(name)
 	last_first[1] = last_first[1].capitalize
 	return "#{last_first[0]} #{last_first[1]}"
 end
+
+names = {}
+input = ""
+until input == "quit"
+	puts "Enter a name to convert it to an alias. Enter \'quit\' to exit."
+	input = gets.chomp
+	if input != "quit"
+		new_alias = alias_manager(input)
+		names[input] = new_alias
+	end
+end
+
+names.each {|old, new| p "#{new} is actually #{old}"}
