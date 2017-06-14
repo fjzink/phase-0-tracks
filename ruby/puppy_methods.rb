@@ -22,11 +22,48 @@ class Puppy
   def play_dead
   	puts "*plays dead*"
   end
+
+  def initialize
+  	puts "Initializing new puppy instance ..."
+  end
 end
 
+=begin
 puppy = Puppy.new
 puppy.fetch("bone")
 puppy.speak(5)
 puppy.roll_over
 puppy.dog_years(2)
 puppy.play_dead
+=end
+
+class Movies
+	def initialize
+		puts "Initializing movie player."
+	end
+
+	def play(title)
+		puts "Play #{title}."
+	end
+
+	def review
+		puts "Do you like the movie?(y/n)"
+		input = gets.chomp
+		if input == "y"
+			puts "Great."
+		elsif input == "n"
+			puts "Alright."
+		else
+			puts "What?"
+		end
+	end
+end
+
+movie_list = []
+for i in 0...50
+	movie_list.push(Movies.new)
+end
+
+p movie_list
+#movie_list.each {|x| x.play("Indiana Jones")}
+#movie_list.each {|x| x.review()}
