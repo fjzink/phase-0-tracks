@@ -63,4 +63,4 @@ for i in 0...50
 end
 
 movie_list.each {|x| x.play("Indiana Jones")}
-movie_list.each {|x| x.review()}
+movie_list.each {|x| x.review}
