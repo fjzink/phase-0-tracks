@@ -27,7 +27,15 @@ class WordGame
 		@game_over = false
 	end
 
-	def update_hidden(guess)
-
+	def update_hidden(instance, guess)
+		indices = []
+		for i in 0...instance.word.length
+			if guess == instance.word[i]
+				indices.push(i)
+			end
+		end
+		for i in 0...indices.length
+			@hidden_word[2*indices[i]] = guess
+		end
 	end
 end
