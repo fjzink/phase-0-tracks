@@ -10,7 +10,7 @@
 
 class WordGame
 	attr_reader :word, :hidden_word, :total_guesses
-	attr_accessor :guess_count, :game_over
+	attr_accessor :guess_count, :game_over, :correct_guesses
 
 	def initialize(word)
 		@word = word
@@ -26,6 +26,7 @@ class WordGame
 		@guess_count = 0
 		@total_guesses = 2 * word.length
 		@game_over = false
+		@correct_guesses = []
 	end
 
 	def update_hidden(instance, guess)
@@ -40,9 +41,10 @@ class WordGame
 		end
 	end
 end
-
+=begin
 puts "Welcome to the Word Guessing Game! Input the word you want your opponent to guess:"
 input = gets.chomp
+input = input.downcase
 game_state = WordGame.new(input)
 
 puts "You can guess one letter per turn."
@@ -50,4 +52,15 @@ puts "You have #{game_state.total_guesses} tries to guess the word."
 puts "If you run out of guesses, you lose. Good Luck!"
 
 while !game_state.game_over
+	puts "Make a guess:"
+	guess = gets.chomp
+	guess = guess.downcase
+	if guess.length == 1
+		if word.include?(guess)
+			update_hidden(game_state, guess)
+		end
+	else
+		puts "Invalid guess. Input just one letter."
+	end
 end
+=end
