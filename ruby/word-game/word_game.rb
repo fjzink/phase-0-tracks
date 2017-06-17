@@ -9,8 +9,8 @@
 =end
 
 class WordGame
-	attr_reader :word
-	attr_accessor :hidden_word, :guess_count, :game_over
+	attr_reader :word, :hidden_word, :total_guesses
+	attr_accessor :guess_count, :game_over
 
 	def initialize(word)
 		@word = word
@@ -24,6 +24,7 @@ class WordGame
 		end
 		@hidden_word = hidden_word
 		@guess_count = 0
+		@total_guesses = 2 * word.length
 		@game_over = false
 	end
 
@@ -38,4 +39,15 @@ class WordGame
 			@hidden_word[2*indices[i]] = guess
 		end
 	end
+end
+
+puts "Welcome to the Word Guessing Game! Input the word you want your opponent to guess:"
+input = gets.chomp
+game_state = WordGame.new(input)
+
+puts "You can guess one letter per turn."
+puts "You have #{game_state.total_guesses} tries to guess the word."
+puts "If you run out of guesses, you lose. Good Luck!"
+
+while !game_state.game_over
 end
