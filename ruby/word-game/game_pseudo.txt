@@ -1,0 +1,7 @@
+*Create a Wordgame class.
+*Store attributes for the word to be guessed, the hidden version of the word to be displayed, the number of moves played, and whether the game is over or not.
+*Allow user to input word, and set turn limit based on word length.
+*If the number of turns meets the turn limit, the game is over and the player loses.
+*Store the players guesses, and if the guess is a repeat do not advance the turn count.
+*If the player guesses the word before the turn limit, the game is over and the player wins.
+*Update and display hidden version of the word on each turn.
