@@ -56,6 +56,8 @@ class WordGame
 			@game_over = true
 			puts "You ran out of guesses. You lose."
 			#return "lose" #Uncomment this line to run rspec
+		else
+			puts @hidden_word
 		end
 	end
 end
@@ -76,7 +78,7 @@ while !game_state.game_over
 	if guess.length == 1
 		if game_state.word.include?(guess) && !game_state.correct_guesses.include?(guess)
 			puts "Your guess was correct."
-			update_hidden(guess)
+			game_state.update_hidden(guess)
 			game_state.correct_guesses.push(guess)
 			game_state.guess_count += 1
 		elsif game_state.correct_guesses.include?(guess)
@@ -88,4 +90,5 @@ while !game_state.game_over
 	else
 		puts "Invalid guess. Input just one letter."
 	end
+	game_state.check_win
 end
