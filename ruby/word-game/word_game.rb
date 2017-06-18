@@ -9,11 +9,11 @@
 =end
 
 class WordGame
-	attr_reader :word, :hidden_word, :total_guesses
-	attr_accessor :guess_count, :game_over, :correct_guesses
+	attr_reader :word, :total_guesses
+	attr_accessor :guess_count, :game_over, :correct_guesses, :hidden_word
 
 	def initialize(word)
-		@word = word
+		@word = word.downcase
 		hidden_word = ""
 		for i in 0...word.length
 			if i < (word.length-1)
@@ -29,10 +29,10 @@ class WordGame
 		@correct_guesses = []
 	end
 
-	def update_hidden(instance, guess)
+	def update_hidden(guess)
 		indices = []
-		for i in 0...instance.word.length
-			if guess == instance.word[i]
+		for i in 0...@word.length
+			if guess == @word[i]
 				indices.push(i)
 			end
 		end
@@ -40,8 +40,26 @@ class WordGame
 			@hidden_word[2*indices[i]] = guess
 		end
 	end
+
+	def check_win
+		word_check = @word.split(//)
+		word_check = word_check.uniq
+		word_check = word_check.sort
+		hidden_check = @hidden_word.split(' ')
+		hidden_check = hidden_check.uniq
+		hidden_check = hidden_check.sort
+		if word_check == hidden_check
+			@game_over = true
+			puts "You correctly guessed the word. Congratulations, you win!"
+			#return "win" #Uncomment this line to run rspec
+		elsif @guess_count == @total_guesses
+			@game_over = true
+			puts "You ran out of guesses. You lose."
+			#return "lose" #Uncomment this line to run rspec
+		end
+	end
 end
-=begin
+
 puts "Welcome to the Word Guessing Game! Input the word you want your opponent to guess:"
 input = gets.chomp
 input = input.downcase
@@ -56,11 +74,18 @@ while !game_state.game_over
 	guess = gets.chomp
 	guess = guess.downcase
 	if guess.length == 1
-		if word.include?(guess)
-			update_hidden(game_state, guess)
+		if game_state.word.include?(guess) && !game_state.correct_guesses.include?(guess)
+			puts "Your guess was correct."
+			update_hidden(guess)
+			game_state.correct_guesses.push(guess)
+			game_state.guess_count += 1
+		elsif game_state.correct_guesses.include?(guess)
+			puts "You already correctly guessed this letter."
+		else
+			puts "Incorrect guess."
+			game_state.guess_count += 1
 		end
 	else
 		puts "Invalid guess. Input just one letter."
 	end
 end
-=end
