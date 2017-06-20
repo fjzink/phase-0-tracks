@@ -93,3 +93,23 @@ alaska.virus_effects
 # Reflection Section
 
 =end
+
+=begin
+Reflect
+
+What are the differences between the two different hash syntaxes shown in the state_data file?
+The main hash is using strings for keys, and the nested hashes are using symbols for keys.
+
+What does require_relative do? How is it different from require?
+require_relative links a file from a relative file path, and require links an existing outside module.
+
+What are some ways to iterate through a hash?
+You could use a loop or you could use an existing method like .each and input a block of code.
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+virus_effects just calls the other two methods in the class.
+
+What concept did you most solidify in this challenge?
+I now have a better understanding of require_relative and require and how and when to use them.
+
+=end
