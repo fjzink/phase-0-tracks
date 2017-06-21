@@ -13,5 +13,12 @@ function reverse(str) {
 	for (var i = 0; i < str.length; i++) {
 		secondArray.unshift(firstArray[i]);
 	}
+	var out = secondArray.join('')
+	return out
+}
 
+var reversedString = reverse("hello")
+
+if (1 == 1) {
+	console.log(reversedString)
 }
