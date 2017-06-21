@@ -7,4 +7,11 @@ output: string
 *Transform the second array back into a string.
 *Return the new string.
 */
+function reverse(str) {
+	firstArray = str.split('');
+	secondArray = [];
+	for (var i = 0; i < str.length; i++) {
+		secondArray.unshift(firstArray[i]);
+	}
 
+}
