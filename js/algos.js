@@ -65,6 +65,9 @@ function randomWords(int) {
 	for (var i = 0; i < int; i++) {
 		var wordLength = Math.floor(Math.random() * 11);
 		var newWord = "";
+		if (wordLength === 0) {
+			wordLength = 1;
+		}
 		for (var j = 0; j < wordLength; j++) {
 			var randomLetter = Math.floor(Math.random() * 26);
 			newWord += alphabet[randomLetter];
