@@ -46,3 +46,32 @@ var objOne = {aKey: "a value", anotherKey: "another value"};
 var objTwo = {someKey: "some value", aKey: "a value"};
 
 console.log(matchingPair(objOne, objTwo))
+
+/*
+Release 2
+input: integer
+output: array of strings
+*Initialize and empty array
+*Loop a number of times equal to the input.
+*On each loop:
+	*generate a random word.
+	*Add the random word in to the array.
+*Return the array.
+*/
+
+function randomWords(int) {
+	var someWords = [];
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	for (var i = 0; i < int; i++) {
+		var wordLength = Math.floor(Math.random() * 11);
+		var newWord = "";
+		for (var j = 0; j < wordLength; j++) {
+			var randomLetter = Math.floor(Math.random() * 26);
+			newWord += alphabet[randomLetter];
+		}
+		someWords.push(newWord);
+	}
+	return someWords;
+}
+
+console.log(randomWords(3))
