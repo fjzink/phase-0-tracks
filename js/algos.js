@@ -44,8 +44,10 @@ function matchingPair(objFirst, objSecond) {
 
 var objOne = {aKey: "a value", anotherKey: "another value"};
 var objTwo = {someKey: "some value", aKey: "a value"};
+var objThree = {not: "gonna match", definitely: "not gonna match bruh"};
 
-console.log(matchingPair(objOne, objTwo))
+console.log(matchingPair(objOne, objTwo));
+console.log(matchingPair(objOne, objThree));
 
 /*
 Release 2
@@ -77,4 +79,9 @@ function randomWords(int) {
 	return someWords;
 }
 
-console.log(randomWords(3))
+for (i = 1; i <= 10; i++) {
+	var wordArray = randomWords(5);
+	console.log(wordArray);
+	var biglyWord = longestString(wordArray);
+	console.log(biglyWord)
+}
