@@ -30,11 +30,11 @@ while !done
 	#Execute a command
 	if input == "add" 
 		Mylist.add_item(to_do_list)
-	elsif input = "delete"
+	elsif input == "delete"
 		Mylist.delete_item(to_do_list)
-	elsif input = "update"
+	elsif input == "update"
 		Mylist.update_item(to_do_list)
-	elsif input = "show"
+	elsif input == "show"
 		Mylist.show_list(to_do_list)
 	else
 		puts "Invalid input."
