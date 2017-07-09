@@ -2,7 +2,7 @@ require 'sqlite3'
 require_relative 'todolist-commands'
 
 #Create the to do list
-to_do_list = Database.new("todolist.db")
+to_do_list = SQLite3::Database.new("todolist.db")
 
 #Store the item and the date that it needs to be complete by
 make_table = <<-SQL
