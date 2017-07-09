@@ -28,14 +28,14 @@ while !done
 	input = gets.chomp
 
 	#Execute a command
-	if input == "add"
-
+	if input == "add" 
+		Mylist.add_item(to_do_list)
 	elsif input = "delete"
-
+		Mylist.delete_item(to_do_list)
 	elsif input = "update"
-
+		Mylist.update_item(to_do_list)
 	elsif input = "show"
-
+		Mylist.show_list(to_do_list)
 	else
 		puts "Invalid input."
 	end
