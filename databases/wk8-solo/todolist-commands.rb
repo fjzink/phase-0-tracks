@@ -14,7 +14,7 @@ module Mylist
 	def self.delete_item(db)
 		puts "Enter item:"
 		item = gets.chomp
-		db.execute("DELETE FROM todolist WHERE name = ?", [item])
+		db.execute("DELETE FROM todolist WHERE item. = ?", [item])
 	end
 
 	def self.update_item(db)
@@ -26,10 +26,11 @@ module Mylist
 		day = gets.chomp
 		puts "Enter year:"
 		year = gets.chomp
-		db.execute("UPDATE todolist SET item = ?, month = ?, day = ?, year = ?", [item, month, day, year])
+		db.execute("UPDATE todolist SET month = ?, day = ?, year = ? WHERE item = ?", [month, day, year, item])
 	end
 
 	def self.show_list(db)
-		db.execute("SELECT * FROM todolist")
+		display_list = db.execute("SELECT * FROM todolist")
+		display_list.each {|x| p "#{x[1]}: #{x[2]}\/#{x[3]}\/#{x[4]}"}
 	end
 end

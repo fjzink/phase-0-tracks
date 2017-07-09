@@ -36,8 +36,6 @@ while !done
 		Mylist.update_item(to_do_list)
 	elsif input == "show"
 		Mylist.show_list(to_do_list)
-	else
-		puts "Invalid input."
 	end
 
 	#End loop if user types "done"
