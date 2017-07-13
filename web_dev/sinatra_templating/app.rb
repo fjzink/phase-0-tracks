@@ -28,10 +28,10 @@ end
 
 # number of students at each campus
 get '/campuses' do
-	@san_francisco = db.execute("SELECT * FROM students WHERE campus=?", ["SF"])
-	@san_diego = db.execute("SELECT * FROM students WHERE campus=?", ["SD"])
-	@seattle = db.execute("SELECT * FROM students WHERE campus=?", ["SEA"])
-	@chicago = db.execute("SELECT * FROM students WHERE campus=?", ["CHI"])
-	@new_york = db.execute("SELECT * FROM students WHERE campus=?", ["NYC"])
+	@san_francisco = db.execute("SELECT * FROM students WHERE campus=?", ['SF'])
+	@san_diego = db.execute("SELECT * FROM students WHERE campus=?", ['SD'])
+	@seattle = db.execute("SELECT * FROM students WHERE campus=?", ['SEA'])
+	@chicago = db.execute("SELECT * FROM students WHERE campus=?", ['CHI'])
+	@new_york = db.execute("SELECT * FROM students WHERE campus=?", ['NYC'])
 	erb :campuses
 end
